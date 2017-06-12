@@ -9,14 +9,19 @@ package "httpd"
 
 
 
-##### para que busque o html e devolva un texto con IP y HOSTNAMe sacados de ohai
+##### para que busque o html e devolva un texto con IP y HOSTNAME sacados de ohai
+#file '/var/www/html/index.html' do
+# content "<h1>La cosa marcha!!!</h1>
+#</h2>ipaddress: #{node['ipaddress']}</h2>
+#</h2>hostname: #{node['hostname']}</h2>
+#"
+#
+# Cambios para que busque plantilla html
 
-file '/var/www/html/index.html' do
- content "<h1>La cosa marcha!!!</h1>
-</h2>ipaddress: #{node['ipaddress']}</h2>
-</h2>hostname: #{node['hostname']}</h2>
-"
- end
+template 'var/www/html/index.html' do
+source 'index.html.erb'
+end
+
 
 ##### para activar o servicio http no arranque (enable:) e que o arranque agora #####
 service 'httpd' do
