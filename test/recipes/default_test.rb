@@ -21,5 +21,5 @@ end
 
 #  proba para testear a url local en /var/log/index.html
 describe command("curl localhost") do
-  its ("stdout") { should match ("Hello, world ") }
+  its ("stdout") { should match ("La cosa marcha!!!") }
 end
