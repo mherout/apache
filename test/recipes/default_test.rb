@@ -8,11 +8,18 @@
 unless os.windows?
   describe user('root') do
     it { should exist }
-    skip 'This is an example test, replace with your own test.'
+#    skip 'This is an example test, replace with your own test.'
   end
 end
 
+# cambios para que o puerto 80 escoite
+#
 describe port(80) do
-  it { should_not be_listening }
-  skip 'This is an example test, replace with your own test.'
+  it { should be_listening }
+#  skip 'This is an example test, replace with your own test.'
+end
+
+#  proba para testear a url local en /var/log/index.html
+describe command("curl localhost") do
+  its ("stdout") { should match ("Hello, world ") }
 end
