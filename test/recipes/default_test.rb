@@ -19,7 +19,7 @@ describe port(80) do
 #  skip 'This is an example test, replace with your own test.'
 end
 
-#  proba para testear a url local en /var/log/index.html
+#  proba para testear a url local en /var/www/html/index.html
 describe command("curl localhost") do
   its ("stdout") { should match ("La cosa marcha!!!") }
 end
