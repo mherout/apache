@@ -8,7 +8,6 @@
 package "httpd"
 
 
-
 ##### para que busque o html e devolva un texto con IP y HOSTNAME sacados de ohai
 #file '/var/www/html/index.html' do
 # content "<h1>La cosa marcha!!!</h1>
